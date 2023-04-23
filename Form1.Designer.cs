@@ -38,9 +38,10 @@
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.Location = new System.Drawing.Point(533, 361);
+            this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesion.Location = new System.Drawing.Point(58, 353);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(114, 77);
+            this.btnIniciarSesion.Size = new System.Drawing.Size(225, 39);
             this.btnIniciarSesion.TabIndex = 0;
             this.btnIniciarSesion.Text = "Iniciar Session";
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
@@ -50,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(528, 82);
+            this.label1.Location = new System.Drawing.Point(103, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 29);
             this.label1.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(528, 203);
+            this.label2.Location = new System.Drawing.Point(85, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 29);
             this.label2.TabIndex = 2;
@@ -68,22 +69,22 @@
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(533, 138);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(77, 130);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(141, 26);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(154, 26);
             this.txtNombreUsuario.TabIndex = 3;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(531, 256);
+            this.txtContraseña.Location = new System.Drawing.Point(77, 250);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(143, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(154, 26);
             this.txtContraseña.TabIndex = 4;
             // 
             // chkMostrarContraseña
             // 
             this.chkMostrarContraseña.AutoSize = true;
-            this.chkMostrarContraseña.Location = new System.Drawing.Point(531, 305);
+            this.chkMostrarContraseña.Location = new System.Drawing.Point(77, 303);
             this.chkMostrarContraseña.Name = "chkMostrarContraseña";
             this.chkMostrarContraseña.Size = new System.Drawing.Size(176, 24);
             this.chkMostrarContraseña.TabIndex = 5;
@@ -95,7 +96,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(342, 450);
             this.Controls.Add(this.chkMostrarContraseña);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtNombreUsuario);

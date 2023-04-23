@@ -13,6 +13,8 @@ namespace SisCoperativa
 {
     public partial class Form1 : Form
     {
+     
+
         private SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-C59873U;Initial Catalog=LoginDB;Integrated Security=True");
 
         public Form1()
@@ -36,35 +38,51 @@ namespace SisCoperativa
                 return;
             }
 
-            string consulta = "SELECT * FROM Usuarios WHERE NombreUsuario=@NombreUsuario AND Contraseña=@Contraseña";
+            // Obtiene el usuario y la contraseña ingresados por el usuario
+            string usuario = txtNombreUsuario.Text;
+            string contrasena = txtContraseña.Text;
 
-            using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-            {
-                cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
-                cmd.Parameters.AddWithValue("@Contraseña", contraseña);
+            // Define la cadena de conexión a la base de datos
+            string connectionString = @"Data Source=DESKTOP-C59873U;Initial Catalog=sistemaCooperativa;Integrated Security=True";
 
-                conexion.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+            using (SqlConnection connection = new SqlConnection(connectionString))
+
+                try
                 {
-                    // Inicio de sesión exitoso
-                    MessageBox.Show("Inicio de sesión exitoso", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Abre la conexión a la base de datos
+                    connection.Open();
+                    // Define la consulta SQL para verificar el usuario y la contraseña
+                    string query = "SELECT COUNT(*) FROM USUARIOS WHERE nombre_Usuario = @txtNombreUsuario.Text AND contraseña = @txtContraseña.Text";
+
+                    // Crea una instancia de SqlCommand y asigna los parámetros de la consulta
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@txtNombreUsuario.Text", usuario);
+                        command.Parameters.AddWithValue("@txtContraseña.Text", contrasena);
+
+                        // Ejecuta la consulta y obtiene el número de filas afectadas
+                        int result = (int)command.ExecuteScalar();
+
+                        if (result > 0)
+                        {
+                            // Si el usuario y la contraseña son válidos, abre el formulario inicio
+                            Form2 FrmPrincipal = new Form2();
+                            FrmPrincipal.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Si el usuario y la contraseña son inválidos, mensaje error
+                            MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    // Credenciales inválidas
-                    MessageBox.Show("Nombre de usuario o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
 
-                reader.Close();
-                conexion.Close();
 
-             
-                Form2 form2 = new Form2();
-                form2.Show();
-                this.Hide();
-
-            }
         }
 
         private void chkMostrarContraseña_CheckedChanged(object sender, EventArgs e)
