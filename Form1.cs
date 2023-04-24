@@ -9,15 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace SisCoperativa
+namespace COOPERATIVAahcr
 {
-    public partial class Form1 : Form
+    public partial class logIn : Form
     {
-     
-
-        private SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-C59873U;Initial Catalog=LoginDB;Integrated Security=True");
-
-        public Form1()
+        public logIn()
         {
             InitializeComponent();
         }
@@ -27,23 +23,29 @@ namespace SisCoperativa
 
         }
 
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            string nombreUsuario = txtNombreUsuario.Text;
-            string contraseña = txtContraseña.Text;
 
-            if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(contraseña))
-            {
-                MessageBox.Show("Por favor, ingrese un nombre de usuario y una contraseña", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             // Obtiene el usuario y la contraseña ingresados por el usuario
-            string usuario = txtNombreUsuario.Text;
-            string contrasena = txtContraseña.Text;
+            string usuario = user.Text;
+            string contrasena = contraseña.Text;
 
             // Define la cadena de conexión a la base de datos
-            string connectionString = @"Data Source=DESKTOP-C59873U;Initial Catalog=sistemaCooperativa;Integrated Security=True";
+            string connectionString = @"Data Source=LAPTOP-JOCDUAG3;Initial Catalog=sistemaCooperativa;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
 
@@ -51,26 +53,49 @@ namespace SisCoperativa
                 {
                     // Abre la conexión a la base de datos
                     connection.Open();
-                    // Define la consulta SQL para verificar el usuario y la contraseña
-                    string query = "SELECT COUNT(*) FROM USUARIOS WHERE nombre_Usuario = @txtNombreUsuario.Text AND contraseña = @txtContraseña.Text";
+                    // Define la consulta SQL para verificar el usuario y la contraseña ADMIN
+                    string queryAdmin = "SELECT COUNT(*) FROM USUARIOS WHERE nombre_Usuario = @user AND contraseña = @contraseña AND rolUsuario = 'admin'";
+
+                    // Define la consulta SQL para verificar el usuario y la contraseña SOCIO
+                    string querySocios = "SELECT COUNT(*) FROM USUARIOS WHERE nombre_Usuario = @user AND contraseña = @contraseña AND rolUsuario = 'socio'";
+
 
                     // Crea una instancia de SqlCommand y asigna los parámetros de la consulta
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand commandA = new SqlCommand(queryAdmin, connection))
+                    using (SqlCommand commandS = new SqlCommand(querySocios, connection))
+
                     {
-                        command.Parameters.AddWithValue("@txtNombreUsuario.Text", usuario);
-                        command.Parameters.AddWithValue("@txtContraseña.Text", contrasena);
+                        commandA.Parameters.AddWithValue("@user", usuario);
+                        commandA.Parameters.AddWithValue("@contraseña", contrasena);
+
+                        commandS.Parameters.AddWithValue("@user", usuario);
+                        commandS.Parameters.AddWithValue("@contraseña", contrasena);
 
                         // Ejecuta la consulta y obtiene el número de filas afectadas
-                        int result = (int)command.ExecuteScalar();
+                        int admin = (int)commandA.ExecuteScalar();
+                        int socios = (int)commandS.ExecuteScalar();
 
-                        if (result > 0)
+                        if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
                         {
-                            // Si el usuario y la contraseña son válidos, abre el formulario inicio
-                            Form2 FrmPrincipal = new Form2();
+                            MessageBox.Show("Por favor, ingrese un nombre de usuario y una contraseña", "Error inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        if (socios > 0 && admin == 0)
+                        {
+                            // SI EL USUARIO ES ADMIN, ABRE FORM 1 SOCIOS
+                            InicioSocios FrmSocios = new InicioSocios();
+                            FrmSocios.Show();
+                            this.Hide();
+                        }
+                        if (admin > 0 && socios == 0)
+                        {
+                            // SI EL USUARIO ES ADMIN, ABRE FORM 2 ADMINISTRADORES
+                            FormPrincipal FrmPrincipal = new FormPrincipal();
                             FrmPrincipal.Show();
                             this.Hide();
                         }
-                        else
+                        if (socios == 0 && admin == 0)
                         {
                             // Si el usuario y la contraseña son inválidos, mensaje error
                             MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -82,21 +107,22 @@ namespace SisCoperativa
 
                 }
 
-
         }
-
-        private void chkMostrarContraseña_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-          
-           if (chkMostrarContraseña.Checked)
+            if (mostrarContraseña.Checked)
             {
-                txtContraseña.UseSystemPasswordChar = false;
+                contraseña.PasswordChar = '\0'; // Carácter nulo
             }
             else
             {
-                txtContraseña.UseSystemPasswordChar = true; 
+                contraseña.PasswordChar = '*'; // Carácter oculto (punto)
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
-
