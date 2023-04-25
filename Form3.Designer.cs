@@ -35,6 +35,9 @@ namespace COOPERATIVAahcr
             this.btnPerfil = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.nombre = new System.Windows.Forms.TextBox();
+            this.apellido = new System.Windows.Forms.TextBox();
+            this.cedula = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbConfiguracion
@@ -48,6 +51,7 @@ namespace COOPERATIVAahcr
             this.cbConfiguracion.Size = new System.Drawing.Size(147, 24);
             this.cbConfiguracion.TabIndex = 0;
             this.cbConfiguracion.Text = "1. Configuración";
+            this.cbConfiguracion.SelectedIndexChanged += new System.EventHandler(this.cbConfiguracion_SelectedIndexChanged);
             // 
             // cbCuentaAhorro
             // 
@@ -79,7 +83,7 @@ namespace COOPERATIVAahcr
             // 
             // btnPerfil
             // 
-            this.btnPerfil.Location = new System.Drawing.Point(486, 16);
+            this.btnPerfil.Location = new System.Drawing.Point(610, 33);
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(128, 55);
             this.btnPerfil.TabIndex = 3;
@@ -89,7 +93,7 @@ namespace COOPERATIVAahcr
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(508, 84);
+            this.btnCerrar.Location = new System.Drawing.Point(632, 101);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(79, 45);
             this.btnCerrar.TabIndex = 4;
@@ -99,7 +103,7 @@ namespace COOPERATIVAahcr
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(508, 166);
+            this.btnLogin.Location = new System.Drawing.Point(632, 183);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(79, 45);
             this.btnLogin.TabIndex = 5;
@@ -107,11 +111,39 @@ namespace COOPERATIVAahcr
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // nombre
+            // 
+            this.nombre.Location = new System.Drawing.Point(36, 79);
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Size = new System.Drawing.Size(129, 22);
+            this.nombre.TabIndex = 7;
+            this.nombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // apellido
+            // 
+            this.apellido.Location = new System.Drawing.Point(234, 87);
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Size = new System.Drawing.Size(146, 22);
+            this.apellido.TabIndex = 8;
+            // 
+            // cedula
+            // 
+            this.cedula.Location = new System.Drawing.Point(414, 95);
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            this.cedula.Size = new System.Drawing.Size(154, 22);
+            this.cedula.TabIndex = 9;
+            // 
             // InicioSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 265);
+            this.ClientSize = new System.Drawing.Size(776, 265);
+            this.Controls.Add(this.cedula);
+            this.Controls.Add(this.apellido);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnPerfil);
@@ -122,6 +154,7 @@ namespace COOPERATIVAahcr
             this.Text = "Menú Inicio - Socios";
             this.Load += new System.EventHandler(this.InicioSocios_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,5 +166,8 @@ namespace COOPERATIVAahcr
         private System.Windows.Forms.Button btnPerfil;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TextBox nombre;
+        private System.Windows.Forms.TextBox apellido;
+        private System.Windows.Forms.TextBox cedula;
     }
 }

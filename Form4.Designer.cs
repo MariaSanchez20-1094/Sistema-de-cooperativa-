@@ -32,8 +32,6 @@ namespace COOPERATIVAahcr
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sistemaCooperativaDataSet = new COOPERATIVAahcr.sistemaCooperativaDataSet();
-            this.sistemaCooperativaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +43,12 @@ namespace COOPERATIVAahcr
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sistemaCooperativaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaCooperativaDataSet = new COOPERATIVAahcr.sistemaCooperativaDataSet();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -75,22 +75,13 @@ namespace COOPERATIVAahcr
             this.idPrestamo,
             this.numCuenta});
             this.dataGridView1.DataSource = this.sistemaCooperativaDataSetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(867, 334);
+            this.dataGridView1.Size = new System.Drawing.Size(1393, 334);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // sistemaCooperativaDataSet
-            // 
-            this.sistemaCooperativaDataSet.DataSetName = "sistemaCooperativaDataSet";
-            this.sistemaCooperativaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sistemaCooperativaDataSetBindingSource
-            // 
-            this.sistemaCooperativaDataSetBindingSource.DataSource = this.sistemaCooperativaDataSet;
-            this.sistemaCooperativaDataSetBindingSource.Position = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // NombreUsuario
             // 
@@ -170,6 +161,16 @@ namespace COOPERATIVAahcr
             this.numCuenta.Name = "numCuenta";
             this.numCuenta.Width = 125;
             // 
+            // sistemaCooperativaDataSetBindingSource
+            // 
+            this.sistemaCooperativaDataSetBindingSource.DataSource = this.sistemaCooperativaDataSet;
+            this.sistemaCooperativaDataSetBindingSource.Position = 0;
+            // 
+            // sistemaCooperativaDataSet
+            // 
+            this.sistemaCooperativaDataSet.DataSetName = "sistemaCooperativaDataSet";
+            this.sistemaCooperativaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -180,13 +181,13 @@ namespace COOPERATIVAahcr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 425);
+            this.ClientSize = new System.Drawing.Size(1436, 425);
             this.Controls.Add(this.dataGridView1);
             this.Name = "perfilUsuario";
             this.Text = "Perfil Socio";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
