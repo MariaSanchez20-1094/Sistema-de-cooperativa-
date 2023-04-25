@@ -38,8 +38,22 @@ namespace COOPERATIVAahcr
             this.btnGestionSocios = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.uSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSUARIOSTableAdapter = new COOPERATIVAahcr.sistemaCooperativaDataSetTableAdapters.USUARIOSTableAdapter();
+            this.cUENTABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cUENTATableAdapter = new COOPERATIVAahcr.sistemaCooperativaDataSetTableAdapters.CUENTATableAdapter();
+            this.uSUARIOSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaCooperativaDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
+            this.apellido = new System.Windows.Forms.TextBox();
+            this.cedula = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUENTABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOSBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // sistemaCooperativaDataSet
@@ -104,7 +118,7 @@ namespace COOPERATIVAahcr
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(532, 96);
+            this.btnCerrar.Location = new System.Drawing.Point(623, 102);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(87, 46);
             this.btnCerrar.TabIndex = 5;
@@ -114,7 +128,7 @@ namespace COOPERATIVAahcr
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(532, 196);
+            this.btnLogin.Location = new System.Drawing.Point(623, 202);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(87, 46);
             this.btnLogin.TabIndex = 6;
@@ -122,11 +136,74 @@ namespace COOPERATIVAahcr
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
+            // uSUARIOSBindingSource
+            // 
+            this.uSUARIOSBindingSource.DataMember = "USUARIOS";
+            this.uSUARIOSBindingSource.DataSource = this.sistemaCooperativaDataSetBindingSource;
+            // 
+            // uSUARIOSTableAdapter
+            // 
+            this.uSUARIOSTableAdapter.ClearBeforeFill = true;
+            // 
+            // cUENTABindingSource
+            // 
+            this.cUENTABindingSource.DataMember = "CUENTA";
+            this.cUENTABindingSource.DataSource = this.sistemaCooperativaDataSetBindingSource;
+            // 
+            // cUENTATableAdapter
+            // 
+            this.cUENTATableAdapter.ClearBeforeFill = true;
+            // 
+            // uSUARIOSBindingSource1
+            // 
+            this.uSUARIOSBindingSource1.DataMember = "USUARIOS";
+            this.uSUARIOSBindingSource1.DataSource = this.sistemaCooperativaDataSetBindingSource;
+            // 
+            // sistemaCooperativaDataSetBindingSource1
+            // 
+            this.sistemaCooperativaDataSetBindingSource1.DataSource = this.sistemaCooperativaDataSet;
+            this.sistemaCooperativaDataSetBindingSource1.Position = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 7;
+            // 
+            // nombre
+            // 
+            this.nombre.Location = new System.Drawing.Point(0, 148);
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Size = new System.Drawing.Size(170, 22);
+            this.nombre.TabIndex = 8;
+            // 
+            // apellido
+            // 
+            this.apellido.Location = new System.Drawing.Point(193, 148);
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Size = new System.Drawing.Size(170, 22);
+            this.apellido.TabIndex = 9;
+            // 
+            // cedula
+            // 
+            this.cedula.Location = new System.Drawing.Point(387, 148);
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            this.cedula.Size = new System.Drawing.Size(170, 22);
+            this.cedula.TabIndex = 10;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 320);
+            this.ClientSize = new System.Drawing.Size(777, 428);
+            this.Controls.Add(this.cedula);
+            this.Controls.Add(this.apellido);
+            this.Controls.Add(this.nombre);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnGestionSocios);
@@ -138,7 +215,12 @@ namespace COOPERATIVAahcr
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUENTABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOSBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -151,5 +233,15 @@ namespace COOPERATIVAahcr
         private System.Windows.Forms.Button btnGestionSocios;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.BindingSource uSUARIOSBindingSource;
+        private sistemaCooperativaDataSetTableAdapters.USUARIOSTableAdapter uSUARIOSTableAdapter;
+        private System.Windows.Forms.BindingSource cUENTABindingSource;
+        private sistemaCooperativaDataSetTableAdapters.CUENTATableAdapter cUENTATableAdapter;
+        private System.Windows.Forms.BindingSource uSUARIOSBindingSource1;
+        private System.Windows.Forms.BindingSource sistemaCooperativaDataSetBindingSource1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nombre;
+        private System.Windows.Forms.TextBox apellido;
+        private System.Windows.Forms.TextBox cedula;
     }
 }
