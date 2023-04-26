@@ -38,6 +38,7 @@ namespace COOPERATIVAahcr
             this.nombre = new System.Windows.Forms.TextBox();
             this.apellido = new System.Windows.Forms.TextBox();
             this.cedula = new System.Windows.Forms.TextBox();
+            this.lbWho = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbConfiguracion
@@ -83,7 +84,7 @@ namespace COOPERATIVAahcr
             // 
             // btnPerfil
             // 
-            this.btnPerfil.Location = new System.Drawing.Point(610, 33);
+            this.btnPerfil.Location = new System.Drawing.Point(318, 58);
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(128, 55);
             this.btnPerfil.TabIndex = 3;
@@ -93,7 +94,7 @@ namespace COOPERATIVAahcr
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(632, 101);
+            this.btnCerrar.Location = new System.Drawing.Point(340, 131);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(79, 45);
             this.btnCerrar.TabIndex = 4;
@@ -103,7 +104,7 @@ namespace COOPERATIVAahcr
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(632, 183);
+            this.btnLogin.Location = new System.Drawing.Point(340, 190);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(79, 45);
             this.btnLogin.TabIndex = 5;
@@ -113,34 +114,46 @@ namespace COOPERATIVAahcr
             // 
             // nombre
             // 
-            this.nombre.Location = new System.Drawing.Point(36, 79);
+            this.nombre.Location = new System.Drawing.Point(15, 154);
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            this.nombre.Size = new System.Drawing.Size(129, 22);
+            this.nombre.Size = new System.Drawing.Size(143, 22);
             this.nombre.TabIndex = 7;
             this.nombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // apellido
             // 
-            this.apellido.Location = new System.Drawing.Point(234, 87);
+            this.apellido.Location = new System.Drawing.Point(15, 179);
             this.apellido.Name = "apellido";
             this.apellido.ReadOnly = true;
-            this.apellido.Size = new System.Drawing.Size(146, 22);
+            this.apellido.Size = new System.Drawing.Size(143, 22);
             this.apellido.TabIndex = 8;
+            this.apellido.TextChanged += new System.EventHandler(this.apellido_TextChanged);
             // 
             // cedula
             // 
-            this.cedula.Location = new System.Drawing.Point(414, 95);
+            this.cedula.Location = new System.Drawing.Point(15, 207);
             this.cedula.Name = "cedula";
             this.cedula.ReadOnly = true;
-            this.cedula.Size = new System.Drawing.Size(154, 22);
+            this.cedula.Size = new System.Drawing.Size(143, 22);
             this.cedula.TabIndex = 9;
+            // 
+            // lbWho
+            // 
+            this.lbWho.AutoSize = true;
+            this.lbWho.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWho.Location = new System.Drawing.Point(12, 134);
+            this.lbWho.Name = "lbWho";
+            this.lbWho.Size = new System.Drawing.Size(132, 17);
+            this.lbWho.TabIndex = 12;
+            this.lbWho.Text = "Usuario Logeado";
             // 
             // InicioSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 265);
+            this.ClientSize = new System.Drawing.Size(472, 253);
+            this.Controls.Add(this.lbWho);
             this.Controls.Add(this.cedula);
             this.Controls.Add(this.apellido);
             this.Controls.Add(this.nombre);
@@ -169,5 +182,6 @@ namespace COOPERATIVAahcr
         private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.TextBox apellido;
         private System.Windows.Forms.TextBox cedula;
+        private System.Windows.Forms.Label lbWho;
     }
 }

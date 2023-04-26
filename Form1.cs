@@ -131,7 +131,10 @@ namespace COOPERATIVAahcr
             }
         }
 
+        private void lbNombreUsuario_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 
     }

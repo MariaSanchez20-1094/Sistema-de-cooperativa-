@@ -35,12 +35,14 @@ namespace COOPERATIVAahcr
             this.COOPERATIVA = new System.Windows.Forms.Label();
             this.mostrarContraseña = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbNombreUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // user
             // 
-            this.user.Location = new System.Drawing.Point(196, 208);
+            this.user.Location = new System.Drawing.Point(111, 249);
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(218, 22);
             this.user.TabIndex = 0;
@@ -48,7 +50,7 @@ namespace COOPERATIVAahcr
             // 
             // contraseña
             // 
-            this.contraseña.Location = new System.Drawing.Point(196, 279);
+            this.contraseña.Location = new System.Drawing.Point(111, 297);
             this.contraseña.Name = "contraseña";
             this.contraseña.PasswordChar = '*';
             this.contraseña.Size = new System.Drawing.Size(218, 22);
@@ -57,7 +59,7 @@ namespace COOPERATIVAahcr
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(196, 356);
+            this.button1.Location = new System.Drawing.Point(111, 352);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 76);
             this.button1.TabIndex = 2;
@@ -68,17 +70,18 @@ namespace COOPERATIVAahcr
             // COOPERATIVA
             // 
             this.COOPERATIVA.AutoSize = true;
-            this.COOPERATIVA.Location = new System.Drawing.Point(284, 188);
+            this.COOPERATIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.COOPERATIVA.Location = new System.Drawing.Point(12, 9);
             this.COOPERATIVA.Name = "COOPERATIVA";
-            this.COOPERATIVA.Size = new System.Drawing.Size(55, 17);
+            this.COOPERATIVA.Size = new System.Drawing.Size(397, 17);
             this.COOPERATIVA.TabIndex = 3;
-            this.COOPERATIVA.Text = "LOG IN";
+            this.COOPERATIVA.Text = "SISTEMA COOPERATIVA DE AHORRO Y CREDITO AHOCRE";
             this.COOPERATIVA.Click += new System.EventHandler(this.label1_Click);
             // 
             // mostrarContraseña
             // 
             this.mostrarContraseña.AutoSize = true;
-            this.mostrarContraseña.Location = new System.Drawing.Point(231, 307);
+            this.mostrarContraseña.Location = new System.Drawing.Point(141, 325);
             this.mostrarContraseña.Name = "mostrarContraseña";
             this.mostrarContraseña.Size = new System.Drawing.Size(153, 21);
             this.mostrarContraseña.TabIndex = 4;
@@ -89,18 +92,41 @@ namespace COOPERATIVAahcr
             // pictureBox1
             // 
             this.pictureBox1.Image = global::COOPERATIVAahcr.Properties.Resources.imagenLogIn;
-            this.pictureBox1.Location = new System.Drawing.Point(165, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(62, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(290, 173);
+            this.pictureBox1.Size = new System.Drawing.Size(306, 176);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // lbNombreUsuario
+            // 
+            this.lbNombreUsuario.AutoSize = true;
+            this.lbNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombreUsuario.Location = new System.Drawing.Point(108, 229);
+            this.lbNombreUsuario.Name = "lbNombreUsuario";
+            this.lbNombreUsuario.Size = new System.Drawing.Size(125, 17);
+            this.lbNombreUsuario.TabIndex = 6;
+            this.lbNombreUsuario.Text = "Nombre Usuario";
+            this.lbNombreUsuario.Click += new System.EventHandler(this.lbNombreUsuario_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(108, 277);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Contraseña";
             // 
             // logIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 450);
+            this.ClientSize = new System.Drawing.Size(439, 440);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbNombreUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mostrarContraseña);
             this.Controls.Add(this.COOPERATIVA);
@@ -124,6 +150,8 @@ namespace COOPERATIVAahcr
         private System.Windows.Forms.Label COOPERATIVA;
         private System.Windows.Forms.CheckBox mostrarContraseña;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbNombreUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }
 

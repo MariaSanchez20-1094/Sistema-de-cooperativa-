@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit.3.13.3\build\NUnit.props" Condition="Exists('packages\NUnit.3.13.3\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,6 +41,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -75,6 +87,18 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestionCuentasAhorro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionCuentasAhorro.Designer.cs">
+      <DependentUpon>gestionCuentasAhorro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestionPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionPrestamos.Designer.cs">
+      <DependentUpon>gestionPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="gestionSocios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +107,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporteAdministradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteAdministradores.Designer.cs">
+      <DependentUpon>reporteAdministradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteCuentasAhorro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteCuentasAhorro.Designer.cs">
+      <DependentUpon>reporteCuentasAhorro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportePrestamos.Designer.cs">
+      <DependentUpon>reportePrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteSocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteSocios.Designer.cs">
+      <DependentUpon>reporteSocios.cs</DependentUpon>
+    </Compile>
     <Compile Include="sistemaCooperativaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +148,12 @@
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gestionCuentasAhorro.resx">
+      <DependentUpon>gestionCuentasAhorro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionPrestamos.resx">
+      <DependentUpon>gestionPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gestionSocios.resx">
       <DependentUpon>gestionSocios.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +167,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reporteAdministradores.resx">
+      <DependentUpon>reporteAdministradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteCuentasAhorro.resx">
+      <DependentUpon>reporteCuentasAhorro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportePrestamos.resx">
+      <DependentUpon>reportePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteSocios.resx">
+      <DependentUpon>reporteSocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,5 +209,20 @@
   <ItemGroup>
     <None Include="Resources\imagenLogIn.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-user-profile-people-flat-orange-logo-user-profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16363.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-user-icon-isolated-on-abstract-background-png-image_1824979.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.13.3\build\NUnit.props'))" />
+  </Target>
 </Project>
