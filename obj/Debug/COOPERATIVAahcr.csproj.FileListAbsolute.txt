@@ -12,3 +12,15 @@ C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.InicioSoci
 C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.logIn.resources
 C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.perfilUsuario.resources
 C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.gestionSocios.resources
+C:\Users\carlo\source\repos\COOPERATIVAahcr\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\carlo\source\repos\COOPERATIVAahcr\bin\Debug\itextsharp.dll
+C:\Users\carlo\source\repos\COOPERATIVAahcr\bin\Debug\nunit.framework.dll
+C:\Users\carlo\source\repos\COOPERATIVAahcr\bin\Debug\itextsharp.xml
+C:\Users\carlo\source\repos\COOPERATIVAahcr\bin\Debug\nunit.framework.xml
+C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.csproj.CopyComplete
+C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.reporteAdministradores.resources
+C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.reporteSocios.resources
+C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.reporteCuentasAhorro.resources
+C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.reportePrestamos.resources
+C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.frmCuentasAhorro.resources
+C:\Users\carlo\source\repos\COOPERATIVAahcr\obj\Debug\COOPERATIVAahcr.frmGestionPrestamos.resources

@@ -30,23 +30,18 @@ namespace COOPERATIVAahcr
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ocupación = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sistemaCooperativaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaCooperativaDataSet = new COOPERATIVAahcr.sistemaCooperativaDataSet();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bVolverAtras = new System.Windows.Forms.Button();
+            this.imprimirPerfil = new System.Windows.Forms.Button();
+            this.laberDS = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).BeginInit();
             this.SuspendLayout();
@@ -57,109 +52,39 @@ namespace COOPERATIVAahcr
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dataGridView1
+            // dgUsuarios
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreUsuario,
-            this.Nombre,
-            this.Apellido,
-            this.correo,
-            this.Dirección,
-            this.numTelefono,
-            this.Ocupación,
-            this.Score,
-            this.Fecha,
-            this.idPrestamo,
-            this.numCuenta});
-            this.dataGridView1.DataSource = this.sistemaCooperativaDataSetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1393, 334);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgUsuarios.BackgroundColor = System.Drawing.Color.DarkTurquoise;
+            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dgUsuarios.Location = new System.Drawing.Point(12, 45);
+            this.dgUsuarios.Name = "dgUsuarios";
+            this.dgUsuarios.RowHeadersWidth = 51;
+            this.dgUsuarios.RowTemplate.Height = 24;
+            this.dgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgUsuarios.Size = new System.Drawing.Size(434, 469);
+            this.dgUsuarios.TabIndex = 1;
+            this.dgUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // NombreUsuario
+            // Column1
             // 
-            this.NombreUsuario.HeaderText = "User";
-            this.NombreUsuario.MinimumWidth = 6;
-            this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NombreUsuario.Width = 125;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Fax", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "DATOS";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // Nombre
+            // Column2
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 125;
-            // 
-            // correo
-            // 
-            this.correo.HeaderText = "CorreoElectronico";
-            this.correo.MinimumWidth = 6;
-            this.correo.Name = "correo";
-            this.correo.Width = 125;
-            // 
-            // Dirección
-            // 
-            this.Dirección.HeaderText = "Dirección";
-            this.Dirección.MinimumWidth = 6;
-            this.Dirección.Name = "Dirección";
-            this.Dirección.Width = 125;
-            // 
-            // numTelefono
-            // 
-            this.numTelefono.HeaderText = "Número Teléfono";
-            this.numTelefono.MinimumWidth = 6;
-            this.numTelefono.Name = "numTelefono";
-            this.numTelefono.Width = 125;
-            // 
-            // Ocupación
-            // 
-            this.Ocupación.HeaderText = "Ocupación";
-            this.Ocupación.MinimumWidth = 6;
-            this.Ocupación.Name = "Ocupación";
-            this.Ocupación.Width = 125;
-            // 
-            // Score
-            // 
-            this.Score.HeaderText = "Score Crediticio";
-            this.Score.MinimumWidth = 6;
-            this.Score.Name = "Score";
-            this.Score.Width = 125;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha Asociación";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Width = 125;
-            // 
-            // idPrestamo
-            // 
-            this.idPrestamo.HeaderText = "Prestamos Activos";
-            this.idPrestamo.MinimumWidth = 6;
-            this.idPrestamo.Name = "idPrestamo";
-            this.idPrestamo.Width = 125;
-            // 
-            // numCuenta
-            // 
-            this.numCuenta.HeaderText = "Numero Cuenta Activa";
-            this.numCuenta.MinimumWidth = 6;
-            this.numCuenta.Name = "numCuenta";
-            this.numCuenta.Width = 125;
+            this.Column2.HeaderText = "USUARIO";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // sistemaCooperativaDataSetBindingSource
             // 
@@ -177,38 +102,68 @@ namespace COOPERATIVAahcr
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+            // bVolverAtras
+            // 
+            this.bVolverAtras.Location = new System.Drawing.Point(458, 457);
+            this.bVolverAtras.Name = "bVolverAtras";
+            this.bVolverAtras.Size = new System.Drawing.Size(91, 57);
+            this.bVolverAtras.TabIndex = 2;
+            this.bVolverAtras.Text = "VOLVER ATRÁS";
+            this.bVolverAtras.UseVisualStyleBackColor = true;
+            this.bVolverAtras.Click += new System.EventHandler(this.bVolverAtras_Click);
+            // 
+            // imprimirPerfil
+            // 
+            this.imprimirPerfil.Location = new System.Drawing.Point(458, 45);
+            this.imprimirPerfil.Name = "imprimirPerfil";
+            this.imprimirPerfil.Size = new System.Drawing.Size(108, 54);
+            this.imprimirPerfil.TabIndex = 3;
+            this.imprimirPerfil.Text = "IMPRIMIR DATOS .PDF";
+            this.imprimirPerfil.UseVisualStyleBackColor = true;
+            this.imprimirPerfil.Click += new System.EventHandler(this.imprimirPerfil_Click);
+            // 
+            // laberDS
+            // 
+            this.laberDS.AutoSize = true;
+            this.laberDS.Font = new System.Drawing.Font("MS PGothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laberDS.Location = new System.Drawing.Point(12, 12);
+            this.laberDS.Name = "laberDS";
+            this.laberDS.Size = new System.Drawing.Size(456, 24);
+            this.laberDS.TabIndex = 6;
+            this.laberDS.Text = "PERFIL DE DATOS USUARIO LOGEADO";
+            this.laberDS.Click += new System.EventHandler(this.label1_Click);
+            // 
             // perfilUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1436, 425);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(581, 527);
+            this.Controls.Add(this.laberDS);
+            this.Controls.Add(this.imprimirPerfil);
+            this.Controls.Add(this.bVolverAtras);
+            this.Controls.Add(this.dgUsuarios);
             this.Name = "perfilUsuario";
             this.Text = "Perfil Socio";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.perfilUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaCooperativaDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dirección;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ocupación;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPrestamo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numCuenta;
+        private System.Windows.Forms.DataGridView dgUsuarios;
         private System.Windows.Forms.BindingSource sistemaCooperativaDataSetBindingSource;
         private sistemaCooperativaDataSet sistemaCooperativaDataSet;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button bVolverAtras;
+        private System.Windows.Forms.Button imprimirPerfil;
+        private System.Windows.Forms.Label laberDS;
     }
 }

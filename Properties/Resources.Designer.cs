@@ -63,9 +63,39 @@ namespace COOPERATIVAahcr.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16363 {
+            get {
+                object obj = ResourceManager.GetObject("16363", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagenLogIn {
             get {
                 object obj = ResourceManager.GetObject("imagenLogIn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_computer_icons_user_profile_people_flat_orange_logo_user_profile {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-computer-icons-user-profile-people-flat-orange-logo-user-profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_user_icon_isolated_on_abstract_background_png_image_1824979 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-user-icon-isolated-on-abstract-background-png-image_1824979", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
